@@ -4,8 +4,8 @@
 
 <br />
 <div align="center">
-    <a href="https://ibb.co/c2J0Fwy"><img src="https://i.ibb.co/c2J0Fwy/Add-a-heading.png" alt="Add-a-heading" border="0"></a>
-  <h3 align="center">DEFI SPOTLIGHT</h3>
+    
+  <h3 align="center">NFT</h3>
 </div>
 
 

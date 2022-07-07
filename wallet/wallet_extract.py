@@ -9,7 +9,7 @@ from sqlite3 import Connection
 from common.connect import *
 
 
-def looksrare_extract():
+def wallet_extract():
     st.markdown('#') 
     top_trend = '<p style="font-family:Courier; color:violet; font-size: 25px;">dYdX (DYDX) is a decentralized exchange platform for cryptocurrency margin trading for assets like BTC, ETH, SOL, DOT, and more. The bulk of dYdX crypto margin trading products reside atop the Ethereum blockchain. However, the exchange recently rolled out on Layer 2 for instantly settled, inexpensive trades..</p>'
     st.markdown(top_trend, unsafe_allow_html=True)

@@ -3,9 +3,9 @@ import datetime
 from metrics import getdata
 import numpy as np
 from PIL import Image
-from opensea.opensea_extract import opensea_extract
+from tokens.token_extract import token_extract
 from nft.nft_extract import nft_home
-from looksrare.looksrare_extract import looksrare_extract
+from wallet.wallet_extract import wallet_extract
 
 
 
@@ -24,7 +24,7 @@ st.markdown(new_title, unsafe_allow_html=True)
 with st.sidebar:
     option = st.radio(
         'Select sponsors',
-        ('NFT_Markets','Opensea', 'looksrare','x2y2'))
+        ('NFT_Markets','Token', 'wallet','Mint'))
 
      
 st.header(option)
@@ -34,10 +34,10 @@ if option == 'NFT_Markets':
   nft_home()
 
 elif option == 'Token' :
-  opensea_extract()
+  token_extract()
 
 elif option == 'Wallet' :
-  looksrare_extract()
+  wallet_extract()
 
 
 

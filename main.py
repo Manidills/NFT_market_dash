@@ -33,10 +33,10 @@ st.header(option)
 if option == 'NFT_Markets':
   nft_home()
 
-elif option == 'Opensea' :
+elif option == 'Token' :
   opensea_extract()
 
-elif option == 'looksrare' :
+elif option == 'Wallet' :
   looksrare_extract()
 
 

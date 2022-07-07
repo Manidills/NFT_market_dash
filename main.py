@@ -24,13 +24,13 @@ st.markdown(new_title, unsafe_allow_html=True)
 with st.sidebar:
     option = st.radio(
         'Select sponsors',
-        ('NFT','Opensea', 'looksrare','x2y2'))
+        ('NFT_Markets','Opensea', 'looksrare','x2y2'))
 
      
 st.header(option)
 
 
-if option == 'NFT':
+if option == 'NFT_Markets':
   nft_home()
 
 elif option == 'Opensea' :

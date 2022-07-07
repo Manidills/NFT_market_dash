@@ -47,4 +47,7 @@ def date_change(df):
         df['month'] = pd.to_datetime(df['month'])    
 
     if 'datex' in df :
-        df['datex'] = pd.to_datetime(df['datex'])    
+        df['datex'] = pd.to_datetime(df['datex'])   
+         
+    if 'time_unit' in df :
+        df['time_unit'] = pd.to_datetime(df['time_unit']) 

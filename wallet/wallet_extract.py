@@ -56,6 +56,6 @@ def wallet_extract():
                 pass
         except:
             st.subheader("NFT's owned by Wallet")
-            st.write(nft_o)
+            st.write(list(nft_o)[:10])
 
 

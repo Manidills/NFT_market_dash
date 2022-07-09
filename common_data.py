@@ -175,6 +175,7 @@ def wallet_nft_owned(chain,address):
             st.dataframe(df)
             return df
         except:
+            
             return data
 
         

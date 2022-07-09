@@ -4,8 +4,8 @@ def date_change(df):
     if 'time' in df :
         df['time'] = pd.to_datetime(df['time'])
     
-    if 'yday' in df :
-        df['yday'] = pd.to_datetime(df['yday'])
+    if 'mindate' in df :
+        df['mindate'] = pd.to_datetime(df['mindate'])
     
     if 'week' in df :
         df['week'] = pd.to_datetime(df['week'])

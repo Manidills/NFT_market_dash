@@ -1,3 +1,4 @@
+from statistics import mean, median
 from common_data import nft_token, nft_trans
 import streamlit as st
 import datetime
@@ -49,11 +50,11 @@ def token_extract():
         st.markdown("#")
         st.subheader("NFT Sales Transactions")
         nft_tran = nft_trans(window_ANTICOR,title,token_add)
-        est_value = nft_tran['price_details'].apply(lambda x: x["price_usd"]).mean()
-        sum_value = nft_tran['price_details'].apply(lambda x: x["price_usd"]).sum()
-        min_value = nft_tran['price_details'].apply(lambda x: x["price_usd"]).min()
-        max_value = nft_tran['price_details'].apply(lambda x: x["price_usd"]).max()
-        median_value = nft_tran['price_details'].apply(lambda x: x["price_usd"]).median()
+        est_value = mean([d.get('price_usd') for d in nft_tran.price_details])
+        sum_value = sum([d.get('price_usd') for d in nft_tran.price_details])
+        min_value = min([d.get('price_usd') for d in nft_tran.price_details])
+        max_value = max([d.get('price_usd') for d in nft_tran.price_details])
+        median_value = median([d.get('price_usd') for d in nft_tran.price_details])
         #mode_value = nft_tran['price_details'].apply(lambda x: x["price_usd"]).mode()
         st.success(f"Estimated Value To Buy This NFT :${est_value}")
         st.write(f"Total_Sum: ${sum_value}")
@@ -61,7 +62,7 @@ def token_extract():
         st.write(f"Max_value: ${max_value}")
         st.write(f"Median_value: ${median_value}")
         st.markdown("#")
-        # st.subheader("Token Transactions")
+        st.subheader("Token Transactions")
         try:st.dataframe(nft_tran)
         except:pass
 

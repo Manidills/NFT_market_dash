@@ -171,12 +171,10 @@ def wallet_nft_owned(chain,address):
         data = response.json()
         try:
             data = data['nfts']
-            df = pd.DataFrame(data)
-            st.dataframe(df)
-            return df
-        except:
             
             return data
+        except:
+           st.info("Data Not Found")
 
         
     else:

@@ -26,10 +26,12 @@ def token_extract():
 
         with col1:
             st.subheader("Contract Metadata")
-            st.write(nft_details['contract'])
+            try:st.write(nft_details['contract'])
+            except:pass
             st.markdown("#")
             st.subheader("NFT Metadata")
-            st.write(nft_details['nft'])
+            try:st.write(nft_details['nft'])
+            except:pass
         with col2:
             st.subheader("Marketplace")
             st.image('https://www.freelogovectors.net/wp-content/uploads/2022/01/opensea-logo-freelogovectors.net_.png', width=400)
@@ -42,11 +44,28 @@ def token_extract():
             st.markdown("#")
             st.markdown("#")
             st.subheader("NFT")
-            st.image(nft_details['nft']['cached_file_url'], width=400)
+            try:st.image(nft_details['nft']['cached_file_url'], width = 400)
+            except:pass
         st.markdown("#")
         st.subheader("NFT Sales Transactions")
         nft_tran = nft_trans(window_ANTICOR,title,token_add)
-        st.dataframe(nft_tran)
+        est_value = nft_tran['price_details'].apply(lambda x: x["price_usd"]).mean()
+        sum_value = nft_tran['price_details'].apply(lambda x: x["price_usd"]).sum()
+        min_value = nft_tran['price_details'].apply(lambda x: x["price_usd"]).min()
+        max_value = nft_tran['price_details'].apply(lambda x: x["price_usd"]).max()
+        median_value = nft_tran['price_details'].apply(lambda x: x["price_usd"]).median()
+        #mode_value = nft_tran['price_details'].apply(lambda x: x["price_usd"]).mode()
+        st.success(f"Estimated Value To Buy This NFT :${est_value}")
+        st.write(f"Total_Sum: ${sum_value}")
+        st.write(f"Min_value: ${min_value}")
+        st.write(f"Max_value: ${max_value}")
+        st.write(f"Median_value: ${median_value}")
+        st.markdown("#")
+        # st.subheader("Token Transactions")
+        try:st.dataframe(nft_tran)
+        except:pass
+
+        
 
 
 

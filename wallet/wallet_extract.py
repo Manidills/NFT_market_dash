@@ -21,7 +21,7 @@ def wallet_extract():
     if submit:
         st.subheader("NFT's Created By The Wallet")
         nft_c = wallet_nft_created(window_ANTICOR, wallet_add)
-        st.write(nft_c)
+        st.write(list(nft_c['nfts'])[:10])
         st.markdown("#")
         st.subheader("Contract's owned by Wallet")
         nft_con = wallet_contract_owned(window_ANTICOR, wallet_add)
@@ -36,13 +36,14 @@ def wallet_extract():
         st.markdown("#")
         st.subheader("NFT's owned by Wallet")
         nft_o = wallet_nft_owned(window_ANTICOR, wallet_add)
+        st.write(list(nft_o)[:10])
         try:
             st.subheader("Top 5 NFT's")
             col1, col2 = st.columns((2,2))
 
-            cached_files = nft_o['cached_file_url'].tolist()
+            cached_files = [i['cached_file_url'] for i in list(nft_o)]
             cached_files = [x for x in cached_files if x is not None][:5]
-            meta = nft_o['metadata'].tolist()
+            meta = [i['metadata'] for i in list(nft_o)]
             meta = [x for x in meta if x is not None][:5]
         
             try:

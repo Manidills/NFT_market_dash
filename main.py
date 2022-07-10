@@ -25,12 +25,10 @@ st.markdown(new_title, unsafe_allow_html=True)
 
 with st.sidebar:
     option = st.radio(
-        'Select sponsors',
+        'NFT Market Portfolio',
         ('NFT_Markets','POAP_Opensea','Collections','Token', 'Wallet','Mint'))
 
      
-st.header(option)
-
 
 if option == 'NFT_Markets':
   nft_home()

@@ -1,3 +1,4 @@
+import requests
 import streamlit as st
 import plost
 import datetime
@@ -23,7 +24,9 @@ def nft_home():
     st.markdown(top_trend, unsafe_allow_html=True)
 
     
-
+    # response = requests.request("GET", 'https://ipfs.infura.io/ipfs/QmUtodXmwzG7apQAw6qJQjwZ1ozX5ZXJSCgy8MXcLCp5AV')
+    # with open("db/NFT_Market/NFT_Markets_Volume.db", "wb") as f:
+    #     f.write(response.content)
 
     data = connect('db/NFT_Market/NFT_Markets_Volume.db')
     st.markdown('#')

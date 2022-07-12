@@ -1,4 +1,6 @@
+import requests
 import plost
+import ipfsApi
 import datetime
 import pandas as pd
 from pathlib import Path
@@ -16,7 +18,9 @@ def Opensea_poap():
     st.markdown(Defi_title, unsafe_allow_html=True)
 
     st.markdown('#')
-
+    response = requests.request("GET", 'https://ipfs.infura.io/ipfs/QmY3VX8VLj6A988ArgZR17jDfDJ9ZQRDuUXp4MotfMaqgg')
+    with open("db/POAP/POAP.db", "wb") as f:
+        f.write(response.content)
     
     data = connect('db/POAP/POAP.db')
     st.markdown('#')

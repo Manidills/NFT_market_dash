@@ -1,3 +1,5 @@
+from mint.mint_extract import mint_extract
+from store_ipfs_data import store__data
 import streamlit as st
 import datetime
 from metrics import getdata
@@ -26,9 +28,10 @@ st.markdown(new_title, unsafe_allow_html=True)
 with st.sidebar:
     option = st.radio(
         'NFT Market Portfolio',
-        ('NFT_Markets','POAP_Opensea','Collections','Token', 'Wallet','Mint'))
+        ('NFT_Markets','POAP_Opensea','Collections','Token', 'Wallet','Generate_Wallet_Summary'))
 
      
+#store__data('db/POAP/POAP.db')
 
 if option == 'NFT_Markets':
   nft_home()
@@ -44,6 +47,9 @@ elif option == 'Token':
 
 elif option == 'Wallet':
   wallet_extract()
+
+elif option == 'Generate_Wallet_Summary':
+  mint_extract()
 
 
 

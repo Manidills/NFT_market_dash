@@ -50,8 +50,8 @@ def token_extract():
         st.markdown("#")
         st.subheader("NFT Sales Transactions")
         nft_tran = nft_trans(window_ANTICOR,title,token_add)
-        if nft_tran.empty:
-            Pass
+        if nft_tran is None:
+            pass
         else:
             est_value = mean([d.get('price_usd') for d in nft_tran.price_details])
             sum_value = sum([d.get('price_usd') for d in nft_tran.price_details])

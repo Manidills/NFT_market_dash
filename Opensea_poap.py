@@ -7,6 +7,7 @@ from pathlib import Path
 import sqlite3
 from sqlite3 import Connection
 from common.connect import *
+from store_retrieve_ipfs_data import retrieve_table_data
 import streamlit as st
 
 
@@ -18,10 +19,9 @@ def Opensea_poap():
     st.markdown(Defi_title, unsafe_allow_html=True)
 
     st.markdown('#')
-    response = requests.request("GET", 'https://ipfs.infura.io/ipfs/QmY3VX8VLj6A988ArgZR17jDfDJ9ZQRDuUXp4MotfMaqgg')
-    with open("db/POAP/POAP.db", "wb") as f:
-        f.write(response.content)
     
+    retrieve_table_data('POAP')
+
     data = connect('db/POAP/POAP.db')
     st.markdown('#')
 

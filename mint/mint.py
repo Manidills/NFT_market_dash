@@ -1,6 +1,8 @@
+import json
+import tempfile
 import requests
 from PIL import Image
-from store_retrieve_ipfs_data import get_ipfs_image, store_nft_image
+from store_retrieve_ipfs_data import get_ipfs_image, get_nft_storage, nft_storage_store, store_nft_image_ipfs
 import streamlit as st
 from tempfile import NamedTemporaryFile
 
@@ -42,11 +44,21 @@ def mint():
                 mint_image = easy_mint(name,description,wallet_address,temp_file.name)
                 st.write(mint_image)
                 st.markdown("#")
-                st.subheader("IPFS Stored Data Details")
+                st.subheader("IPFS Stored URL")
                 if mint_image['response'] == 'OK':
-                    store_nft = store_nft_image(temp_file.name)
-                    st.write(store_nft)
+                    store_nft = store_nft_image_ipfs(temp_file.name)
+                    st.write(store_nft['ipfs_url'])
                     st.markdown("#")
                     st.subheader("Minted Image")
                     get_ipfs_image(store_nft['ipfs_url'])
+                    if store_nft:
+                        tfile = tempfile.NamedTemporaryFile(mode="w+")
+                        json.dump(store_nft, tfile)
+                        tfile.flush()
+                        nft_meta = nft_storage_store(tfile.name)
+                        st.markdown("#")
+                        st.subheader("Retrive Stored Data")
+                        retrive_data = get_nft_storage(nft_meta['value']['cid'])
+                        st.info(retrive_data)
+                        st.write(store_nft)
 

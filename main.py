@@ -1,4 +1,4 @@
-import imp
+from streamlit_option_menu import option_menu
 from mint.mint_extract import mint_extract
 from store_retrieve_ipfs_data import store_table_data
 import streamlit as st
@@ -24,18 +24,15 @@ st.set_page_config(
 new_title = '<p style="font-family: Arial, Helvetica, sans-serif; text-align: center; color:#FFFFFF; font-size: 60px;">NFT Market Dash</p>'
 st.markdown(new_title, unsafe_allow_html=True)
 
-with st.sidebar:
-    option = st.radio(
-        'NFT Market Portfolio',
-        ('NFT_Markets','POAP_Opensea','Collections','Token', 'Wallet','Generate_Wallet_Summary', 'Mint'))
-
+option = option_menu("NFT Market Portfolio", ['NFT_Markets','POAP','Collections','Token', 'Wallet','Summary', 'Mint'], 
+    icons=['house'], menu_icon="cast", default_index=1,  orientation="horizontal")
      
 #store_table_data('db/POAP/POAP.db')
 
 if option == 'NFT_Markets':
   nft_home()
 
-elif option == 'POAP_Opensea':
+elif option == 'POAP':
   store_table_data('db/POAP/POAP.db')
   Opensea_poap()
 
@@ -48,7 +45,7 @@ elif option == 'Token':
 elif option == 'Wallet':
   wallet_extract()
 
-elif option == 'Generate_Wallet_Summary':
+elif option == 'Summary':
   mint_extract()
 
 elif option == 'Mint':

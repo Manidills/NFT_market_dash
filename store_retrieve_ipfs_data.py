@@ -12,6 +12,10 @@ import streamlit as st
 import requests
 import ipfsApi
 
+
+
+#IPFSAPI
+
 def create_table(hash_v,name):
     connection_obj = sqlite3.connect('ipfs.db')
  
@@ -58,7 +62,7 @@ def retrieve_table_data(link):
         f.write(response.content)
     
 
-
+#NFTPORT IPFS
 def store_nft_image_ipfs(image):
     
     file = open(image, "rb")
@@ -74,6 +78,8 @@ def store_nft_image_ipfs(image):
 def get_ipfs_image(ipfs_link):
     st.image(ipfs_link,width = 500)
 
+
+#NFT Storage IPFS
 def nft_storage_store(file):
     # Defining the host is optional and defaults to https://api.nft.storage
     # See configuration.py for a list of all supported configuration parameters.

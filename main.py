@@ -23,10 +23,7 @@ st.set_page_config(
 new_title = '<p style="font-family: Tangerine; text-align: center; color:white; font-size: 70px;">NFT Console</p>'
 st.markdown(new_title, unsafe_allow_html=True)
 
-st.markdown(""" <style>
-#MainMenu {visibility: hidden;}
-footer {visibility: hidden;}
-</style> """, unsafe_allow_html=True)
+
 
 option = option_menu("NFT Market Portfolio", ['NFT_Markets','POAP','Collections','Token', 'Wallet','Summary', 'Mint'], 
     icons=['house'], menu_icon="cast", default_index=0,  orientation="horizontal")

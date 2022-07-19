@@ -16,16 +16,20 @@ import time
 
 
 st.set_page_config(
-    page_title="NFT Market Dash",
+    page_title="NFT Console",
     layout="wide"
 )
 
-
-new_title = '<p style="font-family: Arial, Helvetica, sans-serif; text-align: center; color:#FFFFFF; font-size: 60px;">NFT Market Dash</p>'
+new_title = '<p style="font-family: Tangerine; text-align: center; color:white; font-size: 70px;">NFT Console</p>'
 st.markdown(new_title, unsafe_allow_html=True)
 
+st.markdown(""" <style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+</style> """, unsafe_allow_html=True)
+
 option = option_menu("NFT Market Portfolio", ['NFT_Markets','POAP','Collections','Token', 'Wallet','Summary', 'Mint'], 
-    icons=['house'], menu_icon="cast", default_index=1,  orientation="horizontal")
+    icons=['house'], menu_icon="cast", default_index=0,  orientation="horizontal")
      
 #store_table_data('db/POAP/POAP.db')
 

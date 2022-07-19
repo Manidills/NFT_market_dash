@@ -57,7 +57,7 @@ def mint():
                         tfile.flush()
                         nft_meta = nft_storage_store(tfile.name)
                         st.markdown("#")
-                        st.subheader("Retrive Stored Data")
+                        st.subheader("Retrive Stored Data from NFT Storage")
                         retrive_data = get_nft_storage(nft_meta['value']['cid'])
                         st.info(retrive_data)
                         st.write(store_nft)

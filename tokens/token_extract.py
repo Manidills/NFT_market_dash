@@ -11,7 +11,7 @@ from common.connect import *
 
 
 def token_extract():
-    with st.form("form1", clear_on_submit=True): 
+    with st.form("form1", clear_on_submit=False): 
         values = ['ethereum', 'polygon']
         window_ANTICOR = st.selectbox('Blockchain_ID', values)
         title = st.text_input('Contract_address')
@@ -52,20 +52,24 @@ def token_extract():
         nft_tran = nft_trans(window_ANTICOR,title,token_add)
         if nft_tran is None:
             pass
-        else:
-            est_value = mean([d.get('price_usd') for d in nft_tran.price_details])
-            sum_value = sum([d.get('price_usd') for d in nft_tran.price_details])
-            min_value = min([d.get('price_usd') for d in nft_tran.price_details])
-            max_value = max([d.get('price_usd') for d in nft_tran.price_details])
-            median_value = median([d.get('price_usd') for d in nft_tran.price_details])
         
-            st.success(f"Estimated Value To Buy This NFT :${est_value}")
-            st.write(f"Total_Sum: ${sum_value}")
-            st.write(f"Min_value: ${min_value}")
-            st.write(f"Max_value: ${max_value}")
-            st.write(f"Median_value: ${median_value}")
-            st.markdown("#")
-            st.subheader("Token Transactions")
+        else:
+            try:
+                est_value = mean([d.get('price_usd') for d in nft_tran.price_details])
+                sum_value = sum([d.get('price_usd') for d in nft_tran.price_details])
+                min_value = min([d.get('price_usd') for d in nft_tran.price_details])
+                max_value = max([d.get('price_usd') for d in nft_tran.price_details])
+                median_value = median([d.get('price_usd') for d in nft_tran.price_details])
+            
+                st.success(f"Estimated Value To Buy This NFT :${est_value}")
+                st.write(f"Total_Sum: ${sum_value}")
+                st.write(f"Min_value: ${min_value}")
+                st.write(f"Max_value: ${max_value}")
+                st.write(f"Median_value: ${median_value}")
+                st.markdown("#")
+                st.subheader("Token Transactions")
+            except:
+                st.info('Not much details to analyze')
             try:st.dataframe(nft_tran)
             except:pass
 

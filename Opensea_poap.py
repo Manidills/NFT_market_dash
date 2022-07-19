@@ -14,10 +14,6 @@ import streamlit as st
 
 def Opensea_poap():
     
-
-    Defi_title = '<p style="font-family:Courier; color:green; font-size: 20px;">POAP is a new way of keeping a reliable record of life experiences.Each time they take part on an event, POAP collectors get a unique badge that is supported by a cryptographic record.These badges are Non Fungible Tokens (NFT) and open a whole new world of possibilities..</p>'
-    st.markdown(Defi_title, unsafe_allow_html=True)
-
     st.markdown('#')
     
     retrieve_table_data('POAP')

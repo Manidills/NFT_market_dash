@@ -13,8 +13,6 @@ from common.connect import *
 def nft_home():
     
 
-    Defi_title = '<p style="font-family:Courier; color:green; font-size: 20px;">Non-fungible tokens (NFTs) give you ownership of artwork, music, videos and other online collectibles. They exist on blockchains, the innovative technology that underlies cryptocurrencies like Bitcoin..</p>'
-    st.markdown(Defi_title, unsafe_allow_html=True)
 
     st.markdown('#')
 

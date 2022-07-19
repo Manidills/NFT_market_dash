@@ -101,18 +101,11 @@ def get_nft_storage(cid_):
     configuration = nft_storage.Configuration(
     host = "https://api.nft.storage"
 )
-
-    # The client must configure the authentication and authorization parameters
-    # in accordance with the API server security policy.
-    # Examples for each auth method are provided below, use the example that
-    # satisfies your auth use case.
-
-    # Configure Bearer authorization (JWT): bearerAuth
     configuration = nft_storage.Configuration(
         access_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDE0RkY4NTU4MzVGMDYwZDBCRTk0ZWQyOTBjNTdiODE1YTE5MjQxNUQiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY1NzU2OTU4ODQxOSwibmFtZSI6Ik1BTklESUxMUyJ9.idaK-qJVyOb8WKP1cD0yddE8UJX4zRpBKtX-QqN49fU'
     )
 
-    # Enter a context with an instance of the API client
+
     with nft_storage.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         api_instance = nft_storage_api.NFTStorageAPI(api_client)

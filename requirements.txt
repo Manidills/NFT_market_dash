@@ -1,9 +1,13 @@
 altair==4.2.0
 duneanalytics==1.1.0
+ipfs-api
+matplotlib==3.5.2
 numpy==1.22.1
 pandas==1.4.0
-Pillow==9.1.1
+Pillow==9.2.0
 Plost==0.2.5
-plotly==5.7.0
 requests==2.22.0
 streamlit==1.4.0
+streamlit_option_menu==0.3.2
+wordcloud==1.8.2.2
+git+https://github.com/nftstorage/python-client.git

@@ -4,16 +4,20 @@
 
 <br />
 <div align="center">
-   <a href="https://ibb.co/JzrQbZJ"><img src="https://i.ibb.co/JzrQbZJ/Add-a-little-bit-of-body-text.png" alt="Add-a-little-bit-of-body-text" border="0"></a> alt="Add-a-heading" border="0"></a>
-  <h3 align="center">DEFI SPOTLIGHT</h3>
+   <a href="https://ibb.co/JzrQbZJ"><img src="https://i.ibb.co/JzrQbZJ/Add-a-little-bit-of-body-text.png" "></a> 
+  <h3 align="center">NFT CONSOLE</h3>
+   <summary>DEPLOYED URL -> https://manidills-nft-market-dash-main-a4o57e.streamlitapp.com</summary>
 </div>
 
 
 <!-- TABLE OF CONTENTS -->
 <details>
+ 
   <summary>Table of Contents</summary>
   <ol>
+    
     <li>
+      
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
@@ -37,291 +41,125 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The main goal of our project is to explain whats going in terms of numbers (DATA) in their respective DEFI protocols. It help people to understand whats going in the protocols, so they inverst according to that.
+NFT Console is the NFT portfolio and data analytics application, that help to understand NFT marketplace's,collections, tokens and wallet analytics. That support ethereum and polygon blockchain's.
 
 ### Features
-* Polygon DEX Trades
+* NFT_Markets
      ```js
-    1.Past DEXs 24h Volume in Millions
-    2.Past DEXs 7D Volume in Millions
-    3.Past DEXs 1M Volume in Billions
-    4.DEXs Trailing Past 24h Growth
-    5.DEXs Trailing Past 7D Growth
-    6.DEXs Trailing Past 1M Growth
-    7.Polygon Daily DEXs Volume (LAST_3_MONTHS)
-    8.Polygon Daily DEXs Volume (LAST_3_MONTHS)
-    9.Polygon Weekly DEXs Volume
-    10.Polygon Weekly Volume per DEX
-    11.DEX Marketshare by Volume Last Week
-    12.DEX Marketshare By Trading Volume
-    13.DEXs by Volume
-    14.DEXs by Users
-    15.DEXs by Transaction count
-    16.Aggregators Stats
-    ** Aave polygon stats
-    ** Apwine polygon stats
+    1.NFT Global volume
+    2.Opensea volume over time
+    3.Opensea volume txs over time
+    4.Opensea volume users over time
+    5.Opensea txs over time
+    6.Opensea users over time
+    7.Looksrare volume over time
+    8.Looksrare volume txs over time
+    9.Looksrare volume users over time
+    10.Looksrare txs over time
+    11.Looksrare users over time
+    12.X2y2 volume over time
+    13.X2y2 volume txs over time
+    14.X2y2 volume users over time
+    15.X2y2 txs over time
+    16.X2y2 users over time
    
    ```
 
-* DYDX
+* POAP
     ```js
-    1.Wallets with > 0 Address (DYDX)
-    2.Wallets with > 1000 Address (DYDX)
-    3.Wallets with > 100,000 Address (DYDX)
-    4.DYDX Daily New Users
-    5.DYDX Daily Volume
-    6.DYDX_daily_transaction_count
-    7.DYDX_USDC Unique Stakers
-    8.DYDX_USDC Staked Current Balance
-    9.DYDX_USDC_Staked
-    10.DYDX_amount_of_withdraw
-    11.DYDX_daily_stakers
-    12.DYDX_staked_usdc
-    13.DYDY_token_holders
-    14.DYDX_token_price
-    15.DYDX_daily_buy_on_dex
-    16.DYDX_daily_buy_on_dex
-    17.DYDX_active_users
+    ( DATA RETRIEVE FROM IPFS HTTP CLIENT via [https://github.com/ipfs-shipyard/py-ipfs-http-client] )
+      
+    1.POAP wallet counts mainnet
+    2.POAP wallet counts xdai
+    3.POAP monthly mints mainnet
+    4.POAP monthly mints xdai
+    5.POAP top wallets txs mainnet
+    6.POAP top wallets txs xdai
+    7.Opensea poap total usd
+    8.Opensea poap number of traders
+    9.Opensea poap number of buyers
+    10.Opensea poap number of sellers
+    11.Opensea poap top buyers
+    12.Opensea poap top sellers
+    13.Opensea poap top events
+    14.Opensea poap most traded
+    15.Opensea poap sale distributions
+    16.Opesea daily stats
     ```
     
-* MAKERDAO
+* Collection's
     ```js 
-    1.Maker_price
-    2.Maker_assets_per_type
-    3.Maker_oracle_Medianizer_daily
-    4.Maker_oracle_OSM_Megapoker_daily
-    5.Maker_oracle_gas_fee_Medianizer_daily
-    6.Maker_oracle_gas_fee_OSM_Megapoker_daily
-    7.Maker_oracle_gas_fee_pairs
-    8.Maker_outstanding_dai
-    9.Maker_total_user
-    10.Volumes Maker - Money Markets Inflow
-    11.Volumes Maker - Money Markets Outflow
-    12.Volumes Maker - Money Markets Turnover
+    1.Collection stats ( Top contracts )
+    2."one_day_volume"
+    3."one_day_change"
+    4."one_day_sales"
+    5."one_day_average_price"
+    6."seven_day_volume"
+    7."seven_day_change"
+    8."seven_day_sales"
+    9."seven_day_average_price"
+    10."thirty_day_volume"
+    11."thirty_day_change"
+    12."thirty_day_sales"
+    13."thirty_day_average_price"
+    14."total_volume"
+    15."total_sales"
+    16."total_supply"
+    17."total_minted"
+    18."num_owners"
+    19."average_price"
+    20."market_cap"
+    21."floor_price"
+    22.Contract Sale Transactions
     ```
-* olympus
+* Token's
      ```js 
-    1.Marketcap (OHM)
-    2.Circulating Supply / Total Supply (OHM)
-    3.OlympusDAO_total_wallet_count
-    4.OlympusDAO_new_users_count
-    5.OHM_Price
-    6.OHM_wallet_distribution
-    7.OHM_holders_over_time
-    8.OHM_price_marketcap
-    9.OHM Transcation_counts
-    10.Active_Ohm_Stakers
-    11.OHM_liqudity_owned
-    12.OHM_Treasury_Breakdown_By_Asset_Type
+    1.Contract Metadata
+    2.NFT Metadata
+    3.NFT Sales Transactions
+    4.NFT Image
+    5.NFT Analytics Details
+    6.NFT Estimated Price
     ```
     
-* Unstoppable
+* Wallets
     ```js
-    1.Polygon Sales Volume in USD
-    2.ETH Sales Volume in USD
-    3.Polygon sales Count
-    4.ETH sales Count
-    5.NFT Sales On Polygon
+    1.NFT's Created By The Wallet
+    2.Contract's owned by Wallet
+    3.Token's Balance
+    4.Historical Portfolio Value Over Time
+    5.NFT's owned by Wallet
     6.NFT Sales On ETH
-    7.Possible NFT Washtraded Sales On Polygon
-    8.Possible NFT Washtraded Sales On ETH
-    9.Total Transactions Counts 
-    10.Most Used Token Symbol
-    11.Most Interacted Wallet
-    12.Max Sale
-    13.Min Sale
-    14.Avg Sale
-    15.Overall Sale Volume
-    16.sale_data
+    7.Top 5 NFT's with metadata
     ```
-* yearn
+      
+* Summary
     ```js
-    1.Yearn vaults user activity in the latest 24 hours
-    2.Yearn vaults user activity in the latest 30 days
-    3.Yearn_vault_active_users
-    4.Yearn_vault_active__old_users
-    5.Yearn_vault_number_of_transactions'
-    6.Yearn_vault_unique_users
-    7.Yearn_vault_Deposit_Value_Distribution
-    8.Yearn_vault_top_25_active_vaults
-    9.Yearn_vault_avg_deposit_withdraw_YCRV
-    10.Yearn_vault_avg_deposit_withdraw_YLINK
-    11.Yearn_vault_avg_deposit_withdraw_YUSDC
-    12.Yearn_vault_avg_deposit_withdraw_YUSDT
-    13.Yearn_vault_avg_harvested_yCRV
-    14.Yearn_vault_avg_harvested_yDAI
-    15.Yearn_vault_avg_harvested_yUSDC
-    16.Yearn_vault_avg_harvested_yUSDT
+    WORDCLOUD IMAGE WITH SUMMARY
+    1.Most used contract
+    2.Most used token
+    3.Total balance
+    4.Most used NFT contract type
+    5.Most interacted address
+    6.TOP NFT collection
+    7.Verified or not
+    8.Highest NFT buy
+    9.Most NFT holding collection
+    MANY more !!!!!!!!!!!
 
     ```
-* Babylon
+      
+* Mint
     ```js
-    1.BABL locked in hBABL contract
-    2.Balance USD in hBABL Contract
-    3.hBABL price
-    4.babylon_babl_in_heart_over_time
-    5.babylon_hBABL_daily_balance
-    6.babylon_hbabl_holders_grouped
-    7.babylon_pump_totals
-    8.babylon_hbabl_per_address
-    9.babylon_seed_investment_per_garden
-    10.babylon_heart_babl_sent
-    11.babylon_heart_fees_collected
-    12.babylon_heart_garden_seedinvest
-    13.babylon_heart_liquidity_added
-    ```
-* Badger
-    ```js
-    1.wallet > 0 (Badger)
-    2.wallet > 1000 (Badger)
-    3.wallet > 100,000 (Badger)
-    4.Badger_token_daily_active_users
-    5.Badger_token_daily_new_account
-    6.Badger_token_daily_buys
-    7.Badger_token_total_users
-    8.Badger_token_dex_volume
-    9.Badger_token_transactions
-    10.Digg_trading_volume
-    11.Digg_uniswap_users_over_time
-    12.Digg_susi_users_over_time
-    13.Digg_users_over_time
-    14.ibBTC_supply
-    15.weekly_gas_usage
-    16.weekly_gas_usage_per_type
-    17.Badger_Sett_TVL
-    ```
-* Chainlink
-    ```js
-    1.Wallets with (LINK))
-    2.Wallets with > 10  (LINK)
-    3.Wallets with > 100 (LINK)
-    4.chainlinkVRF_total_link_on_cexs
-    5.chainlink_on_dapps
-    6.chainlinkVRF_v1_BSC_LINK_Earned
-    7.chainlinkVRF_v1_ETH_LINK_Earned
-    8.chainlinkVRF_v1_daily_BSC
-    9.chainlinkVRF_v2_daily_BSC
-    10.chainlinkVRF_v1_daily_ETH
-    11.chainlinkVRF_v2_daily_ETH
-    12.chainlinkVRF_daily_polygon
-    13.chainlinkVRF_keepers_daily_BSC
-    14.chainlinkVRF_keepers_daily_ETH
-    15.chainlinkVRF_keepers_daily_poly
-    16.chainlink_Feed_Requesting_Transactions
-    17.chainlink_active_feeds
-    18.chainlink_active_feeds_requesters
-    ```
-* Covalent
-    ```js
-    1.cqt_price
-    2.cqt_daily_buys_on_dex
-    3.cqt_daily_active_users
-    4.cqt_daily_new_account
-    5.cqt_holders_over_time
-    6.cqt_purchases
-    7.cqt_seven_days_dex_volume
-    8.cqt_seven_days_dex_volume
-    9.cqt_transactions
-    10.cqt_monthly_active_users
-    11.cqt_unique_address_trading
-    ```
-* EPNS
-    ```js
-    1.PUSH Holders
-    2.PUSH Recent AVG Price
-    3.push_price
-    4.PUSH_supply
-    5.PUSH_LP_price
-    6.PUSH_holders
-    7.push_uniswap_lp_holders
-    8.push_weekly_avg_amount_transaction
-    9.PUSH_transfered_amount
-    10.PUSH_avg_transfered_amount
-    ```
-* Lyra
-    ```js
-    1.Notional Volume
-    2.Premium Volume
-    3.Total Trades
-    4.Unique Trades
-    5.Lyra_notational_volume_by_assets
-    6.Daily Unique Traders
-    7.Total Traders By Day
-    8.AVG Traders
-    9.Lyra Top 50 traders profit
-    10.Lyra Top 50 traders volume
-    11.Lyra_btc_marketpool_price
-    12.Lyra_btc_marketpool_price
-    13.Lyra_eth_marketpool_price
-    14.Lyra_eth_marketpool_pool_value
-    15.Lyra_link_marketpool_price
-    16.Lyra_link_marketpool_pool_value
-    17.Lyra Recent Trade History
-    18.lyra_susd_volume
-    19.lyra_profitable_traders
-    20.lyra_high_volume_traders
-    ```
-* Uniswap
-    ```js
-    1.Total Trading Volume (All Pairs)
-    2.Trading Volume in Top 15 Pairs
-    3.Total LP Fees (All Pairs)
-    4.LP Fees in Top 15 Pairs
-    5.Uniswap daily transactions by volume (USD)
-    6.Uniswap vs Sushi pools
-    7.Uniswap polygon daily transaction count
-    8.Uniswap polygon daily unique address 
-    9.Uniswap polygon weekly transaction count
-    10.Uniswap polygon weekly unique address
-    11.Uniswap Trade per Month
-    12.Uniswap_v3_ETH_table
-    13.Uniswap_v3_eth_gas_paid_per_swap
-
-    ```
-
-* Aave
-    ```js
-    1.Aave Polygon Transcation details
-    2.Aave Users Cummulative
-    3.Aave Daily Users
-    4.Aave Polygon Borrow Volume
-    5.Aave Polygon Deposit Volume
-    6.Aave Polygon Flash Loan Volume
-    7.Aave Polygon Liqudation Volume
-    8.Aave Polygon Repay Volume
-    9.Aave Polygon Transaction Volume
-    10.Aave Polygon Withdraw Volume
-    11.Aave Polygon Financial Statements
-
-    ```
-
-
-* Apwine
-    ```js
-    1.Fully Diluted Market Cap - ETH & Polygon
-    2.Total Token Supply - ETH & Polygon
-    3.Holders on Ethereum - ETH & Polygon
-    4.Circulating Supply - ETH & Polygon
-    5.Total Traded Volume - ETH & Polygon
-    6.$APW Price - ETH & Polygon
-    7.Apwine DEX Usage ETH
-    8.Apwine Token Daily Buy
-    9.Apwine Token Daily Buy
-    10.Apwine User Growth ETH
-    11.Apwine Token Cumulative Sell
-    12.Apwine Token Distribution ETH
-    13.Apwine DEX Volume ETH
-    14.Apwine DEX Usage Polygon
-    15.Apwine User Growth Polygon 
-    16.Apwine Total Transaction Deposit
-    17.Apwine Total Transaction Withdraw
-    18.Apwine Token Distribution Polygon
-    19.Apwine DEX Volume Polygon
+    MINT THE SUMMARY IMAGE ON "WALLET SUMMARY COLLECTION" ( POLYON CHAIN )
+    1. Upload image
+    2. IPFS URL  ( NFT PORT IPFS UPLOAD )
+    3. NFT METADATA ( NFT STORAGE )
     ```
 
 
 
-Website link : [DEFI Spotlight](https://share.streamlit.io/ashikmuezza/defi_dashboard/main/main.py)
+Website link : <summary>[NFT Console](https://manidills-nft-market-dash-main-a4o57e.streamlitapp.com/)</summary>
 
 
 

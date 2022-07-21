@@ -41,7 +41,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-NFT Console is the NFT portfolio and data analytics application, that help to understand NFT marketplace's,collections, tokens and wallet analytics. That support ethereum and polygon blockchain's.
+NFT Console is the NFT portfolio and data analytics application, that help to understand NFT marketplace's,collections, tokens ,wallet analytics and wallet summary token minting. That support ethereum and polygon blockchain's.
 
 ### Features
 * NFT_Markets

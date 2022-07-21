@@ -266,7 +266,7 @@ NUMBER OF APIS USED
 Most the NFT Marketplaces data's and POAP related data was collected vis COVALENT apis, adding on that wallet balance and portfolio data's are directly avilable from there apis. That very helpful for creating a chart's.
 
 ```js
-1.https://api.covalenthq.com/v1/1/nft_market/?key=ckey_eb29565e970e4b46930dca374df (old)
+1.https://api.covalenthq.com/v1/1/nft_market(old)
 2.https://api.covalenthq.com/v1/1/address/{address}/balances_v2/?quote-currency=USD&format=JSON&nft=false&no-nft-fetch=false
 3.https://api.covalenthq.com/v1/1/address/{address}/portfolio_v2/?quote-currency=USD&format=JSON
 4.https://api.covalenthq.com/v1/1/tokens/{address}/nft_transactions/{token}/?quote-currency=USD&format=JSON

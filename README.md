@@ -185,7 +185,7 @@ Retrieve data
         f.write(response.content)
  ```       
         
-2. NFTPORT IPFS UPLOAD 
+2. NFTPORT IPFS UPLOAD (https://docs.nftport.xyz/docs/nftport/b3A6Njg1NTI0MTY-upload-a-file-to-ipfs)
 
 Minted wallet collection's NFT images are stored to IPFS via nftport api 
 
@@ -203,7 +203,7 @@ Retrieve NFT data
    st.image(ipfs_link,width = 500) ( stremalit function retrieve the IPFS URL data )
 ```
 
-3. NFT Storage UPLOAD
+3. NFT Storage UPLOAD (https://github.com/nftstorage/python-client/blob/main/docs/NFTStorageAPI.md#store)
 
 NFT Storage used to store the wallet collections NFT Metadata and wallet infomation. Its really meant to store NFT data's and seems great ( HIghly recommended for NFT metadata )
 

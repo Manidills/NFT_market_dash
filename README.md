@@ -167,82 +167,121 @@ Website link : <summary>[NFT Console](https://manidills-nft-market-dash-main-a4o
 
 
 ### Built With
+* <h1>IPFS (store_retrieve_ipfs_data.py)</h1>
 
-The frameworks/libraries explicitly used in this project are
+1. https://github.com/ipfs-shipyard/py-ipfs-http-client
 
-* [Python](python.org)
-* [keras](https://keras.io/)
-* [streamlit](https://streamlit.io/)
-* [streamlit-aggrid](https://pypi.org/project/streamlit-aggrid/)
-* [requests](https://docs.python-requests.org/en/latest/)
-* sqlite
+The IPFS python client used to store and retrieve the database's. Frequntly from the api's data's are stored as a database and moved to IPFS. In a meanwhile ipfs hash and database details stored as local DB.While moving the tabs to analytics page it retrieve the data from IPFS by passing the IPFS hash.
 
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-## Getting Started
-
-To get a local copy up and running follow these simple example steps.
-
-
-### Installation
-
-Follow these steps to install certain packages which is to be installed in this project also make your own 
-API key from covalent to get access for data.
-
-### Home page data is not complete ethereum data, we can take it as approx 
-
-1. Get a free API Key from [covalent](https://www.covalenthq.com/)
-2. Clone the repo
-3. streamlit run main.py
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-### Prerequisites
-
-* altair==4.2.0
-* keras==2.8.0
-* numpy==1.22.1
-* pandas==1.4.0
-* pillow==9.0.1
-* requests==2.22.0
-* scikit_learn==1.0.2
-* streamlit==1.4.0
-* streamlit-aggrid
-* sqlite
-
-
-
-
-<!-- CONTRIBUTING -->
-## API
-
-We have used API's from covalent for listing transcation details, analayze and etc.
-
-
-* COVALENTHQ API USED
+Store data to IPFS
 ```js
+    api = ipfsApi.Client(host='https://ipfs.infura.io', port=5001)
+    new_file = api.add(DB)
+```
+Retrieve data
+```js
+   response = requests.request("GET", f'https://ipfs.infura.io/ipfs/{ipfs hash}')
+    with open("DB", "wb") as f:
+        f.write(response.content)
+ ```       
+        
+2. NFTPORT IPFS UPLOAD 
 
-1.https://api.covalenthq.com/v1/1/address/{address}/transactions_v2/?key=key 
-2.https://api.covalenthq.com/v1/1/transaction_v2/{hash}/?key=key 
-3.https://api.covalenthq.com/v1/1/networks/aave_v2/assets/?quote-currency=USD&format=JSON&key=ckey_docs
+Minted wallet collection's NFT images are stored to IPFS via nftport api 
+
+Store NFT data
+```js
+   requests.post(
+        "https://api.nftport.xyz/v0/files",
+        headers={"Authorization": '!!!!!'},
+        files={"file": file}
+    )
+```
+Retrieve NFT data
+
+```js
+   st.image(ipfs_link,width = 500) ( stremalit function retrieve the IPFS URL data )
 ```
 
-Above apis are used to get transaction details for protocols that help to make seperate tables on sqlite.
-## Acknowledgments
+3. NFT Storage UPLOAD
 
-Would like to give credit to below teams for providing the API's
- 
+NFT Storage used to store the wallet collections NFT Metadata and wallet infomation. Its really meant to store NFT data's and seems great ( HIghly recommended for NFT metadata )
 
-* [Covalent](https://www.covalenthq.com/)
-* [ETL](https://github.com/blockchain-etl/ethereum-etl)
-* [polygon ETL](https://github.com/blockchain-etl/polygon-etl)
-* Filpsidecrypto // Dune
+Store data
+
+```js
+   host = "https://api.nft.storage"
+   api_response = api_instance.store(body, _check_return_type=False)
+   
+ ```
+Retrieve data
+
+```js
+     host = "https://api.nft.storage"
+    api_response = api_instance.status(cid,_check_return_type=False)
+```
 
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+* <h1>POLYGON (mint.py)<h1>
+1.NFT console support both polygon and ethereum , we can find analytics for any polygon collection and wallet's
 
+2.WALLET SUMMARY COLLECTION"S was minted on POLYGON CHAIN, each nft minted by people was store in POLYGON CHAIN via nftport easy mint api.
+
+```js 
+   query_params = {
+        "chain": "Polygon",
+        "name": name,
+        "description": description,
+        "mint_to_address": wallet_address
+    }
+
+   response = requests.post(
+        "https://api.nftport.xyz/v0/mints/easy/files",
+        headers={"Authorization": "****"},
+        params=query_params,
+        files={"file": file}
+    )
+```
+
+* <h1>NFTPORT (common_data.py)</h1>
+
+The analytics data was collected via NFT PORT API's, NFTPORT providing solid apis that more enough to build NFT dashboard very easily. 
+
+NUMBER OF APIS USED 
+
+```js
+1.https://api.nftport.xyz/v0/transactions/stats/{address}
+2.https://api.nftport.xyz/v0/transactions/nfts/{address}
+3.https://api.nftport.xyz/v0/nfts/{address}/{token}
+4.https://api.nftport.xyz/v0/transactions/nfts/{address}/{token}
+5.https://api.nftport.xyz/v0/accounts/creators/{address}
+6.https://api.nftport.xyz/v0/accounts/{address}
+7.https://api.nftport.xyz/v0/accounts/contracts/{address}
+8.https://api.nftport.xyz/v0/mints/easy/files
+9.https://api.nftport.xyz/v0/files
+```
+
+* <h1>COVALENT (common_data.py)</h1>
+
+Most the NFT Marketplaces data's and POAP related data was collected vis COVALENT apis, adding on that wallet balance and portfolio data's are directly avilable from there apis. That very helpful for creating a chart's.
+
+```js
+1.https://api.covalenthq.com/v1/1/nft_market/?key=ckey_eb29565e970e4b46930dca374df (old)
+2.https://api.covalenthq.com/v1/1/address/{address}/balances_v2/?quote-currency=USD&format=JSON&nft=false&no-nft-fetch=false
+3.https://api.covalenthq.com/v1/1/address/{address}/portfolio_v2/?quote-currency=USD&format=JSON
+4.https://api.covalenthq.com/v1/1/tokens/{address}/nft_transactions/{token}/?quote-currency=USD&format=JSON
+```
+
+* <h1>POAP (POAP.py)</h1>
+
+1. Analytics dashboard for POAP tokens on mainnet and xdai.
+2. POAP tokens analytics on opensea platform ( DO check for intersting numbers )
+
+
+
+
+
+<h2>**** BIG shout out for COVALENT, NFTPORT, IPFS, POLYGON and POAP for amazing work.</h2>
 
 
 

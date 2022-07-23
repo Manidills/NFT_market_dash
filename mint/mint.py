@@ -11,7 +11,7 @@ def easy_mint(name, description, wallet_address, image):
     file = open(image, 'rb')
 
     query_params = {
-        "chain": "rinkeby",
+        "chain": "polygon",
         "name": name,
         "description": description,
         "mint_to_address": wallet_address

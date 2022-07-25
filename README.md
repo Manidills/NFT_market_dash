@@ -67,7 +67,7 @@ NFT Console is the NFT portfolio and data analytics application, that help to un
 
 * POAP
     ```js
-    ( DATA RETRIEVE FROM IPFS HTTP CLIENT via [https://github.com/ipfs-shipyard/py-ipfs-http-client] )
+    ( DATA STORE & RETRIEVE FROM IPFS HTTP CLIENT via [https://github.com/ipfs-shipyard/py-ipfs-http-client] )
       
     1.POAP wallet counts mainnet
     2.POAP wallet counts xdai
